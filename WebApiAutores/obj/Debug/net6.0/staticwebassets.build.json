@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "r3gisPDvNdheS5XQBuPBfK83NDNoq6mrtOEm4mF8UTg=",
+  "Source": "WebApiAutores",
+  "BasePath": "_content/WebApiAutores",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "WebApiAutores\\wwwroot",
+      "Source": "WebApiAutores",
+      "ContentRoot": "D:\\jacob\\Documents\\SoftwareProjects\\FullStack\\CSharp\\CShapCurso\\CursoAPIRestASPNET\\modulo-5-web-api-autores-\\WebApiAutores\\wwwroot\\",
+      "BasePath": "_content/WebApiAutores",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\jacob\\Documents\\SoftwareProjects\\FullStack\\CSharp\\CShapCurso\\CursoAPIRestASPNET\\modulo-5-web-api-autores-\\WebApiAutores\\wwwroot\\Archivo 1.text",
+      "SourceId": "WebApiAutores",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\jacob\\Documents\\SoftwareProjects\\FullStack\\CSharp\\CShapCurso\\CursoAPIRestASPNET\\modulo-5-web-api-autores-\\WebApiAutores\\wwwroot\\",
+      "BasePath": "_content/WebApiAutores",
+      "RelativePath": "Archivo 1.text",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Archivo 1.text"
+    }
+  ]
+}
