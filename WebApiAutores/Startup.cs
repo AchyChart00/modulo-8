@@ -4,6 +4,7 @@ using WebApiAutores.Controllers;
 using WebApiAutores.Middlewares;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using WebApiAutores.Filtros;
+using Microsoft.AspNetCore.Identity;
 
 namespace WebApiAutores
 {
@@ -39,6 +40,10 @@ namespace WebApiAutores
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
             services.AddAutoMapper(typeof(Startup));
+            //Configuración del Identity
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)

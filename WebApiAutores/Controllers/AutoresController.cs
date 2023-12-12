@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -23,16 +24,9 @@ namespace WebApiAutores.Controllers
             _mapper = mapper;
             Configuration = configuration;
         }
-
-        [HttpGet("configuraciones")]//Obtener variables del archivo appsettings.json con la clase IConfiguration
-        public ActionResult<string> ObtenerConfiguracion()
-        {
-            return Configuration["apellido"];
-            //return Configuration["ConnectionStrings:defaultConnection"];
-            //return Configuration.GetConnectionString("defaultConnection");
-        }
         
         [HttpGet]// api/autores
+        [Authorize(AuthenticationSchemes =JwtBearerDefaults.AuthenticationScheme)]
         public async Task<List<AutorDTO>> Get()
         {
             var autores = await context.Autores.ToListAsync();

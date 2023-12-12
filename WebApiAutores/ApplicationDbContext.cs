@@ -1,9 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using WebApiAutores.Entidades;
 
 namespace WebApiAutores
 {
-    public class ApplicationDbContext : DbContext
+    //Para trabajar con Identity debemos de heredar de IdentityDBContext
+    public class ApplicationDbContext : IdentityDbContext
+    //public class ApplicationDbContext : DbContext
     {
         //Generamos un constructor para pasar el connection string
         public ApplicationDbContext(DbContextOptions options) : base(options)
@@ -13,6 +16,7 @@ namespace WebApiAutores
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Si se sobreescribe el OnModelCreating es importante que se mantenga esta linea de código
             base.OnModelCreating(modelBuilder);
 
             //Estoy asignando una llave primaria compuesta en AutorLibro,

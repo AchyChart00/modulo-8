@@ -539,3 +539,8 @@ D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPN
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
