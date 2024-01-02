@@ -5,6 +5,9 @@ using WebApiAutores.Middlewares;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using WebApiAutores.Filtros;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.OpenApi.Models;
 
 namespace WebApiAutores
 {
@@ -16,29 +19,67 @@ namespace WebApiAutores
         }
 
         public IConfiguration Configuration { get; }
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
-            
+
             // Add services to the container.
             services.AddControllers(opciones =>
                 {
                     opciones.Filters.Add(typeof(FiltroDeExcepcion));
                 })
                 .AddJsonOptions(
-                    x=> x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles
+                    x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles
                     ).AddNewtonsoftJson();
 
             //Agregamos la configuración de nuestro DBContext
-            services.AddDbContext<ApplicationDbContext>(opt=>
+            services.AddDbContext<ApplicationDbContext>(opt =>
             opt.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
 
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
-            
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(opc => opc.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(
+                        Encoding.UTF8.GetBytes(Configuration["llaveJWT"])
+                        ),
+                    ClockSkew = TimeSpan.Zero
+                });
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen();
+
+            //Configuración para SWAGGER para colocar Tokens
+            services.AddSwaggerGen(c =>
+            {
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "JWT",
+                    In = ParameterLocation.Header
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[]{}
+                    }
+                });
+            });
+
             services.AddAutoMapper(typeof(Startup));
             //Configuración del Identity
             services.AddIdentity<IdentityUser, IdentityRole>()
@@ -48,8 +89,8 @@ namespace WebApiAutores
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
         {
-            app.UseLoguearRespuestaHTTP(); 
-            
+            app.UseLoguearRespuestaHTTP();
+
             // Configure the HTTP request pipeline.
             if (env.IsDevelopment())
             {
@@ -70,7 +111,7 @@ namespace WebApiAutores
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers(); 
+                endpoints.MapControllers();
             });
         }
     }
