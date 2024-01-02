@@ -1,4 +1,7 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApiAutores.DTOs;
@@ -13,12 +16,16 @@ namespace WebApiAutores.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
+        private readonly UserManager<IdentityUser> userManager;
 
         public ComentariosController(ApplicationDbContext context,
-            IMapper mapper)
+            IMapper mapper,
+            UserManager<IdentityUser> userManager
+            )
         {
             _context = context;
             _mapper = mapper;
+            this.userManager = userManager;
         }
 
         [HttpGet]
@@ -49,8 +56,14 @@ namespace WebApiAutores.Controllers
         }
         
         [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult> Post(int libroId, ComentarioCreacionDTO comentarioCreacionDTO)
         {
+            //Aquí obtener el email del usuario a traves del JSON WebToken con HttpContext
+            var emailClaim = HttpContext.User.Claims.Where(claim => claim.Type == "email").FirstOrDefault();
+            var email = emailClaim.Value;
+            var usuario = await userManager.FindByEmailAsync(email);
+            var usuarioId = usuario.Id;
             var existeLibro = await _context.Libros.AnyAsync(libroDB => libroDB.Id == libroId);
 
             if (!existeLibro)
@@ -60,11 +73,12 @@ namespace WebApiAutores.Controllers
 
             var comentario = _mapper.Map<Comentario>(comentarioCreacionDTO);
             comentario.LibroId = libroId;
+            comentario.UsuarioId = usuarioId;
             _context.Add(comentario);
             await _context.SaveChangesAsync();
 
             var comentarioDTO = _mapper.Map<ComentarioDTO>(comentario);
-            return CreatedAtRoute("ObtenerComentario", new {id=comentario.Id, libroId = libroId}, comentarioDTO);
+            return CreatedAtRoute("ObtenerComentario", new { id = comentario.Id, libroId = libroId }, comentarioDTO);
         }
 
         [HttpPut("{id:int}")]
