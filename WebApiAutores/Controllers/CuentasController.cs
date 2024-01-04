@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -17,17 +18,53 @@ namespace WebApiAutores.Controllers
         private readonly UserManager<IdentityUser> userManager;
         private readonly IConfiguration configuration;
         private readonly SignInManager<IdentityUser> signInManager;
+        private readonly IDataProtector dataProtector;
 
         public CuentasController(
             UserManager<IdentityUser> userManager,
             //Recordar siempre importar el IConfiguration de Microsoft
             IConfiguration configuration,
-            SignInManager<IdentityUser> signInManager
+            SignInManager<IdentityUser> signInManager,
+            IDataProtectionProvider dataProtectionProvider
             )
         {
             this.userManager = userManager;
             this.configuration = configuration;
             this.signInManager = signInManager;
+            dataProtector = dataProtectionProvider.CreateProtector("valor_unico_y_quizas_secreto");
+        }
+
+        [HttpGet("Encriptar")]
+        public ActionResult Encriptar() 
+        {
+            var textoPlano = "Jacob Sánchez";
+            var textoCrifrado = dataProtector.Protect(textoPlano);  
+            var textoDesencriptado = dataProtector.Unprotect(textoCrifrado);
+            
+            return Ok(new
+            {
+                textoPlano = textoPlano,
+                textoCifrado = textoCrifrado,
+                textoDesencriptado = textoDesencriptado 
+            });
+        }
+
+        [HttpGet("EncriptarPorTiempo")]
+        public ActionResult EncriptarPorTiempo()
+        {
+            var protectorLimitadoPorTiempo = dataProtector.ToTimeLimitedDataProtector();
+
+            var textoPlano = "Jacob Sánchez";
+            var textoCrifrado = protectorLimitadoPorTiempo.Protect(textoPlano, lifetime: TimeSpan.FromSeconds(5));
+            Thread.Sleep(6000);
+            var textoDesencriptado = protectorLimitadoPorTiempo.Unprotect(textoCrifrado);
+
+            return Ok(new
+            {
+                textoPlano = textoPlano,
+                textoCifrado = textoCrifrado,
+                textoDesencriptado = textoDesencriptado
+            });
         }
 
         [HttpPost("registrar")]// api/cuentas/registrar
