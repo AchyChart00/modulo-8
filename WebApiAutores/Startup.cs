@@ -87,6 +87,24 @@ namespace WebApiAutores
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
+            //Autorización basada en claims
+            services.AddAuthorization(opc =>
+            {
+                opc.AddPolicy("EsAdmin", politica => politica.RequireClaim("esAdmin"));
+            });
+
+            //Servicios de protección de datos.
+            services.AddDataProtection();
+
+            services.AddCors(opc =>
+            {
+                opc.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins("").AllowAnyMethod().AllowAnyHeader();
+                    //.WithExposedHeaders;   
+                });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
@@ -108,6 +126,10 @@ namespace WebApiAutores
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            //cors
+            app.UseCors();  
+
 
             app.UseAuthorization();
 
