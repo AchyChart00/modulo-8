@@ -91,6 +91,8 @@ namespace WebApiAutores.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<RespuestaAutenticacion>> Login(CredencialesUsuario credencialesUsuario)
         {
+
+
             var resultado = await signInManager.PasswordSignInAsync(
                 credencialesUsuario.Email,
                 credencialesUsuario.Password,
