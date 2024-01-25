@@ -9,6 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
 using System.IdentityModel.Tokens.Jwt;
+using WebApiAutores.Servicios;
 
 namespace WebApiAutores
 {
@@ -97,6 +98,10 @@ namespace WebApiAutores
             //Servicios de protección de datos.
             services.AddDataProtection();
 
+            //HASH
+            services.AddTransient<HashService>();
+
+            //CORS
             services.AddCors(opc =>
             {
                 opc.AddDefaultPolicy(builder =>

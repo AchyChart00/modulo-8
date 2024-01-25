@@ -8,6 +8,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using WebApiAutores.DTOs;
+using WebApiAutores.Servicios;
 
 namespace WebApiAutores.Controllers
 {
@@ -18,6 +19,7 @@ namespace WebApiAutores.Controllers
         private readonly UserManager<IdentityUser> userManager;
         private readonly IConfiguration configuration;
         private readonly SignInManager<IdentityUser> signInManager;
+        private readonly HashService hashService;
         private readonly IDataProtector dataProtector;
 
         public CuentasController(
@@ -25,13 +27,30 @@ namespace WebApiAutores.Controllers
             //Recordar siempre importar el IConfiguration de Microsoft
             IConfiguration configuration,
             SignInManager<IdentityUser> signInManager,
-            IDataProtectionProvider dataProtectionProvider
+            IDataProtectionProvider dataProtectionProvider,
+            HashService hashService
             )
         {
             this.userManager = userManager;
             this.configuration = configuration;
             this.signInManager = signInManager;
+            this.hashService = hashService;
             dataProtector = dataProtectionProvider.CreateProtector("valor_unico_y_quizas_secreto");
+        }
+
+        [HttpGet("hash/{textoPlano}")]
+        public ActionResult realizarHash(string textoPlano)
+        {
+            var resultado1 = hashService.Hash(textoPlano);
+            var resultado2 = hashService.Hash(textoPlano);
+
+            return Ok(new
+            {
+                textoPlano = textoPlano,  
+                hash1= resultado1,  
+                hash2 = resultado2
+            });  
+
         }
 
         [HttpGet("Encriptar")]
