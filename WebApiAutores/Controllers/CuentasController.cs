@@ -32,6 +32,7 @@ namespace WebApiAutores.Controllers
             )
         {
             this.userManager = userManager;
+
             this.configuration = configuration;
             this.signInManager = signInManager;
             this.hashService = hashService;
@@ -98,7 +99,6 @@ namespace WebApiAutores.Controllers
 
             if (resultado.Succeeded)
             {
-                //Aquí regresamos el JWT
                 return await ConstruirToken(credencialesUsuario);
             }
             else
