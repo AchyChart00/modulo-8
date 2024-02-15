@@ -40,7 +40,7 @@ namespace WebApiAutores.Servicios
         {
             var esAdmin = await EsAdmin();
             var Url = ConstruirURLHelper();
-            
+
             autorDTO.Enlaces.Add(new DatosHATEOAS(
                 enlace: Url.Link("ObtenerAutor", new { id = autorDTO.Id }),
                 descripcion: "self",

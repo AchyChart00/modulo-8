@@ -35,37 +35,11 @@ namespace WebApiAutores.Controllers
         
         [HttpGet(Name = "ObtenerAutores")]// api/autores
         [AllowAnonymous]//AllowAnonymous permite consumir el API sin Token
-        public async Task<IActionResult> Get([FromQuery] bool incluirHATEOAS = true)
+        [ServiceFilter(typeof(HATEOASAutorFilterAttribute))]
+        public async Task<ActionResult<List<AutorDTO>>> GetPorNombre([FromHeader] string incluirHATEOAS)
         {
             var autores = await context.Autores.ToListAsync();
-            var dtos =  _mapper.Map<List<AutorDTO>>(autores);
-            
-            if (incluirHATEOAS)
-            {
-                var esAdmin = await authorizationService.AuthorizeAsync(User, "esAdmin");
-
-                //dtos.ForEach(dto => GenerarEnlaces(dto, esAdmin.Succeeded));
-                
-                var resultado = new ColeccionDeRecursos<AutorDTO> { Valores = dtos };
-                resultado.Enlaces.Add(new DatosHATEOAS(
-                    enlace: Url.Link("obtenerAutores", new { }),
-                    descripcion: "self",
-                    metodo: "GET"
-                    ));
-
-                if (esAdmin.Succeeded)
-                {
-                    resultado.Enlaces.Add(new DatosHATEOAS(
-                    enlace: Url.Link("crearAutor", new { }),
-                    descripcion: "crear-autor",
-                    metodo: "POST"
-                    ));
-                }
-
-                return Ok(resultado);   
-            }
-
-            return Ok(dtos);
+            return _mapper.Map<List<AutorDTO>>(autores);
         }
 
         [HttpGet("{id:int}", Name = "ObtenerAutor")]

@@ -444,8 +444,8 @@ C:/Users/jacob.sanchez/Documents/Practicas/web-api-autores/WebApiAutores/bin/Deb
 /Users/jacobsanchez/Documents/ProgrammingProjects/FullStack/CSharp/CShapCurso/CursoAPIRestASPNET/modulo-5-web-api-autores-/WebApiAutores/obj/Debug/net6.0/WebApiAutores.pdb
 /Users/jacobsanchez/Documents/ProgrammingProjects/FullStack/CSharp/CShapCurso/CursoAPIRestASPNET/modulo-5-web-api-autores-/WebApiAutores/obj/Debug/net6.0/WebApiAutores.genruntimeconfig.cache
 /Users/jacobsanchez/Documents/ProgrammingProjects/FullStack/CSharp/CShapCurso/CursoAPIRestASPNET/modulo-5-web-api-autores-/WebApiAutores/obj/Debug/net6.0/ref/WebApiAutores.dll
-D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\appsettings.json
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\appsettings.Development.json
+D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\appsettings.json
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\WebApiAutores.staticwebassets.runtime.json
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\WebApiAutores.exe
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\WebApiAutores.deps.json
@@ -458,6 +458,11 @@ D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPN
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Azure.Identity.dll
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Humanizer.dll
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
@@ -471,6 +476,8 @@ D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPN
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
@@ -487,6 +494,8 @@ D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPN
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Mono.TextTemplating.dll
+D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -535,12 +544,3 @@ D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPN
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\obj\Debug\net6.0\WebApiAutores.pdb
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\obj\Debug\net6.0\WebApiAutores.genruntimeconfig.cache
 D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\obj\Debug\net6.0\ref\WebApiAutores.dll
-D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
-D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
-D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Newtonsoft.Json.dll
-D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
-D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
-D:\jacob\Documents\SoftwareProjects\FullStack\CSharp\CShapCurso\CursoAPIRestASPNET\modulo-5-web-api-autores-\WebApiAutores\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
