@@ -10,6 +10,8 @@ using System.Text;
 using Microsoft.OpenApi.Models;
 using System.IdentityModel.Tokens.Jwt;
 using WebApiAutores.Servicios;
+using WebApiAutores.Utilidades;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace WebApiAutores
 {
@@ -110,6 +112,10 @@ namespace WebApiAutores
                     //.WithExposedHeaders;   
                 });
             });
+
+            services.AddTransient<GeneradorEnlaces>();
+            services.AddTransient<HATEOASAutorFilterAttribute>();
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
