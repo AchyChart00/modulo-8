@@ -83,6 +83,10 @@ namespace WebApiAutores
                         new string[]{}
                     }
                 });
+
+                //OperationFilter
+                //Sirve para remover de nuestros parametros de las acciones los FORMHEADERS requeridos.
+                c.OperationFilter<AgregarParametroHATEOAS>();
             });
 
             services.AddAutoMapper(typeof(Startup));

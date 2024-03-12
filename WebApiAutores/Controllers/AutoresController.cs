@@ -36,7 +36,7 @@ namespace WebApiAutores.Controllers
         [HttpGet(Name = "ObtenerAutores")]// api/autores
         [AllowAnonymous]//AllowAnonymous permite consumir el API sin Token
         [ServiceFilter(typeof(HATEOASAutorFilterAttribute))]
-        public async Task<ActionResult<List<AutorDTO>>> GetPorNombre([FromHeader] string incluirHATEOAS)
+        public async Task<ActionResult<List<AutorDTO>>> GetPorNombre()
         {
             var autores = await context.Autores.ToListAsync();
             return _mapper.Map<List<AutorDTO>>(autores);
@@ -45,7 +45,7 @@ namespace WebApiAutores.Controllers
         [HttpGet("{id:int}", Name = "ObtenerAutor")]
         [AllowAnonymous]
         [ServiceFilter(typeof(HATEOASAutorFilterAttribute))]
-        public async Task<ActionResult<AutorDTOConLibros>> Get(int id, [FromHeader] string incluirHATEOAS)
+        public async Task<ActionResult<AutorDTOConLibros>> Get(int id)
         {
             var autor =  await context.Autores
                 .Include(autorDB=>autorDB.AutoresLibros)
