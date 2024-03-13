@@ -12,7 +12,10 @@ using System.IdentityModel.Tokens.Jwt;
 using WebApiAutores.Servicios;
 using WebApiAutores.Utilidades;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using System.Reflection;
+using Microsoft.AspNetCore.Mvc;
 
+[assembly: ApiConventionType(typeof(DefaultApiConventions))]
 namespace WebApiAutores
 {
     public class Startup
@@ -62,7 +65,22 @@ namespace WebApiAutores
             //Configuración para SWAGGER para colocar Tokens
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPIAutores", Version ="v1"});
+                c.SwaggerDoc("v1", new OpenApiInfo { 
+                    Title = "WebAPIAutores", 
+                    Version ="v1", 
+                    Description = "Este es un web api para trabajar con autores y libros",
+                    Contact = new OpenApiContact
+                    {
+                        Email = "jacob@hotmail.com",
+                        Name = "Jacob Sanchez",  
+                        //Url = new Uri(""),
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "MIT",   
+                    },
+                    
+                });
                 c.SwaggerDoc("v2", new OpenApiInfo { Title = "WebAPIAutores", Version = "v2" });
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
@@ -91,6 +109,10 @@ namespace WebApiAutores
                 //Sirve para remover de nuestros parametros de las acciones los FORMHEADERS requeridos.
                 c.OperationFilter<AgregarParametroHATEOAS>();
                 c.OperationFilter<AgregarParametroXVersion>();
+
+                var archivoXML = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var rutaXML = Path.Combine(AppContext.BaseDirectory, archivoXML);
+                c.IncludeXmlComments(rutaXML);  
             });
 
             services.AddAutoMapper(typeof(Startup));
