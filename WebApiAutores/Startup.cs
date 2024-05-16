@@ -138,8 +138,8 @@ namespace WebApiAutores
             {
                 opc.AddDefaultPolicy(builder =>
                 {
-                    builder.WithOrigins("").AllowAnyMethod().AllowAnyHeader();
-                    //.WithExposedHeaders;   
+                    builder.WithOrigins("").AllowAnyMethod().AllowAnyHeader()
+                    .WithExposedHeaders(new string[] { "cantidadTotalRegistros" });   
                 });
             });
 
